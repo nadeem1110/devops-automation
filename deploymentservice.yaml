@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment # Kubernetes resource kind we are creating
 metadata:
-  name: spring-boot1-deployment
+  name: spring-boot2-deployment
 spec:
   selector:
     matchLabels:
-      app: spring-boot1
+      app: spring-boot2
   replicas: 2 # Number of replicas that will be created for this deployment
   template:
     metadata:
       labels:
-        app: spring-boot1
+        app: spring-boot2
     spec:
       containers:
-        - name: spring-boot1
-          image: nadeempatel/devops-integration:1.0 # Image that will be used to containers in the cluster
+        - name: spring-boot2
+          image: nadeempatel/devops-integration:1.1 # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
@@ -25,10 +25,10 @@ spec:
 apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
 metadata: # Metadata of the resource kind we are creating
-  name: springboot1-svc
+  name: springboot2-svc
 spec:
   selector:
-    app: spring-boot1
+    app: spring-boot2
   ports:
     - protocol: "TCP"
       port: 8080 # The port that the service is running on in the cluster
