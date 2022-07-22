@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class DevopsIntegrationApplication {
+publica class DevopsIntegrationApplication {
 
 	@GetMapping
 	public String message(){
