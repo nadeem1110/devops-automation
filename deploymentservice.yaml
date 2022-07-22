@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: spring-boot2
-          image: nadeempatel/devops-integration:1.1 # Image that will be used to containers in the cluster
+          image: nadeempatel/devops-integration:devops-integration-VERSION # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
